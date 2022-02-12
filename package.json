@@ -1,0 +1,28 @@
+{
+  "name": "2fa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "sls offline start -s dev"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "adal-node": "^0.1.28",
+    "azure-keyvault": "^3.0.4-preview",
+    "babel-loader": "^8.0.0-beta",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "qrcode": "^1.2.0",
+    "serverless-http": "^1.5.5",
+    "speakeasy": "^2.0.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.26.1",
+    "serverless-offline": "^3.20.0",
+    "serverless-webpack": "^5.1.1",
+    "webpack": "^4.4.1",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

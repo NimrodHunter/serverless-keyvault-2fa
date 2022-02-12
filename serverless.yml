@@ -1,0 +1,35 @@
+service: serverless-2fa
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  environment: ${file(env.yml):${opt:stage}}
+
+functions:
+  createSecret:
+    handler: handlers.api
+    events:
+      - http:
+          path: secret
+          method: post
+          cors:
+            origin: '*'
+  verifyToken:
+    handler: handlers.api
+    events:
+      - http:
+          path: verify
+          method: post
+          cors:
+            origin: '*'
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+  webpack: ./webpack.config.js
+  webpackIncludeModules:
+    packagePath: './package.json'
